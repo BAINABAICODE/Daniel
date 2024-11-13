@@ -1,0 +1,343 @@
+/*================================BOOK LIST DESIGN =================================================*/
+.book-list {
+    background-color: transparent;/*bOOK List*/
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+.add-book-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.add-button {
+    background-color: #ca2e07;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.view-button,
+.edit-button,
+.delete-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.view-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.edit-button {
+    background-color: #FFA500;
+    color: white;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row on small screens */
+    }
+}
+/*================================BOOK FORM =================================================*/
+
+.book-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+}
+
+button[type="button"] {
+    background-color: #f44336;
+}
+
+/*================================BOOK DETAILS =================================================*/
+
+.book-details-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.book-title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.book-info {
+    line-height: 1.6;
+    color: #555;
+}
+
+.book-info p {
+    margin: 8px 0;
+}
+
+.back-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+}
+
+
+/*================================Notification and message  =================================================*/
+/* Success message style */
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the message */
+    background-color: #4CAF50; /* Green background for success */
+    color: white;
+    padding: 20px; /* Consistent padding with notification */
+    font-size: 1.2rem; /* Same font size as notification */
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it appears above other content */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit the width */
+    text-align: center; /* Center text */
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* Fade-in effect */
+}
+
+/* General notification styling */
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50; /* Green background for success */
+    color: white;
+    padding: 20px; /* Consistent padding with success message */
+    font-size: 1.2rem; /* Same font size as success message */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    text-align: center; /* Center text */
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Success notification styling */
+.notification.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Animation for fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Optional styling for content inside notification */
+.notification-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*================================HOME PAGES  =================================================*/
+
+.home-page {
+    background: linear-gradient(135deg, #4CAF50, #2C6F2E); /* Green gradient background */
+    padding: 20px;
+    
+    
+}
+.page-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/*================================ADD PAGES  =================================================*/
+/* Background design for AddBook page */
+.add-book-page {
+    background: linear-gradient(135deg, #81C784, #388E3C); /* Green gradient background */
+    color: white;
+    
+    
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/*================================EDIT PAGES  =================================================*/
+
+/* Background design for EditBook page */
+.edit-book-page {
+    background: linear-gradient(135deg, #4CAF50, #2C6F2E); /* Green gradient background */
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/*================================view  PAGES  =================================================*/
+/* Background design for ViewBook page */
+.view-book-page {
+    background: linear-gradient(135deg, #FFC107, #FF9800); /* Warm orange gradient background */
+    padding: 110px;
+    
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* You can add more custom styles here if needed */
+
